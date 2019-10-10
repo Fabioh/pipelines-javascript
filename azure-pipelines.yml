@@ -6,16 +6,40 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-16.04'
+
 strategy:
   matrix:
-    node_8_x:
+    node_8_x_linux:
+      imageName: "ubuntu-16.04"
       node_version: 8.x
-    node_9_x:
+    node_9_x_linux:
+      imageName: "ubuntu-16.04"
       node_version: 9.x
-    node_10_x:
+    node_10_x_linux:
+      imageName: "ubuntu-16.04"
       node_version: 10.x
+    node_8_x_win:
+      imageName: "vs2017-win2016"
+      node_version: 8.x
+    node_9_x_win:
+      imageName: "vs2017-win2016"
+      node_version: 9.x
+    node_10_x_win:
+      imageName: "vs2017-win2016"
+      node_version: 10.x
+    node_8_x_mac:
+      imageName: "macOS-10.14"
+      node_version: 8.x
+    node_9_x_mac:
+      imageName: "macOS-10.14"
+      node_version: 9.x
+    node_10_x_mac:
+      imageName: "macOS-10.14"
+      node_version: 10.x
+    maxParallel: 4
+
+pool:
+  vmImage: $(imageName)
 
 steps:
 - task: NodeTool@0 
