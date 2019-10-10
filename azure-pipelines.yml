@@ -22,6 +22,7 @@ strategy:
     node_10_x_linux:
       imageName: "ubuntu-16.04"
       node_version: 10.x
+    
     node_8_x_win:
       imageName: "vs2017-win2016"
       node_version: 8.x
@@ -31,6 +32,7 @@ strategy:
     node_10_x_win:
       imageName: "vs2017-win2016"
       node_version: 10.x
+    
     node_8_x_mac:
       imageName: "macOS-10.14"
       node_version: 8.x
@@ -40,7 +42,7 @@ strategy:
     node_10_x_mac:
       imageName: "macOS-10.14"
       node_version: 10.x
-  maxParallel: 4
+  maxParallel: 9
 
 pool:
   vmImage: $(imageName)
