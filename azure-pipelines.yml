@@ -36,7 +36,7 @@ strategy:
     node_10_x_mac:
       imageName: "macOS-10.14"
       node_version: 10.x
-    maxParallel: 4
+  maxParallel: 4
 
 pool:
   vmImage: $(imageName)
